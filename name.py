@@ -19,7 +19,7 @@ def decoder(password):
     for i in range(len(decoder)):
         decrement = int(decoder[i]) - 3
         if decrement < 0:
-            decoded_password += str(decrement)[-1]
+            decoded_password += str(10 + decrement)
             continue
         decoded_password += str(decrement)
     return decoded_password
@@ -34,7 +34,7 @@ def main():
             pw_encoded = encode(pw)
             print("Your password has been encoded and stored!")
         elif user_input == "2":
-            print(f"The encoded password is {pw_encoded}, and the original password is {pw}")
+            print(f"The encoded password is {pw_encoded}, and the original password is {decoder(pw_encoded)}")
         elif user_input == "3":
             quit()
 
