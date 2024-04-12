@@ -11,7 +11,18 @@ def encode(password):
             pw_encoded += str(new_dig)
     return pw_encoded
 
-
+# Jaden
+def decoder(password):
+    decoder = ""
+    decoder += str(password)
+    decoded_password = ""
+    for i in range(len(decoder)):
+        decrement = int(decoder[i]) - 3
+        if decrement < 0:
+            decoded_password += str(decrement)[-1]
+            continue
+        decoded_password += str(decrement)
+    return decoded_password
 def main():
     pw_encoded = 0
     pw = ""
